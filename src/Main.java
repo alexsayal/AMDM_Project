@@ -14,26 +14,26 @@ public class Main {
 	
 	// ===== To Run or Not to Run ===== //
 	public static final boolean runBruteForce = false;
-	public static final boolean runDataReduction = true;
-	public static final boolean runTask2 = true;
-	public static final boolean runTask3 = false;
+	public static final boolean runDataReduction = false;
+	public static final boolean runTask2 = false;
+	public static final boolean runTask3 = true;
 	public static final boolean runTask4 = false;
 	
 	// ===== Main ===== //
 	public static void main(String[] args) throws Exception{
 		Tools.createFolder(FilesPath);
 		
-		//-----Task1
+		//-----Task1-----//
 		ArrayList<Term> sortByNumberOfTweets = Tasks.task1(); //List of Sorted Tweets by Number
 		Term.writerArrayTerms(sortedArrayFileName, sortByNumberOfTweets);
 
-		//-----Brute Force Algorithm
+		//-----Brute Force Algorithm-----//
 		if(runBruteForce){
 			long time = Tasks.bruteforce();
 			System.out.println("Total Running Time: " + time + "ms");
 		}
 		
-		//-----DataReduction
+		//-----DataReduction-----//
 		if(runDataReduction){
 			long startTime = System.currentTimeMillis();
 			for(String i : Methods){
@@ -48,7 +48,7 @@ public class Main {
 			System.out.println("Total time for reduction: " + totalTime + "ms");
 		}
 		
-		//-----Task2
+		//-----Task2-----//
 		if(runTask2){
 			long[][] task2times = new long[8][3];
 			int k=0;
@@ -61,14 +61,12 @@ public class Main {
 			Tools.writerTimes("Task2.csv", task2times);
 		}
 		
-		//-----Task3
+		//-----Task3-----//
 		if(runTask3){
 			long[][] task3times = new long[8][3];
 			int k=0;
 			for(String i : Methods){
-				System.out.println("Method: " + i);
 				for(int j : D){
-					System.out.println("D: " + j);
 					task3times[j/2][k] = Tasks.task3(i, j);
 				}
 				k+=1;
@@ -76,14 +74,12 @@ public class Main {
 			Tools.writerTimes("Task3.csv", task3times);
 		}
 		
-		//-----Task4
+		//-----Task4-----//
 		if(runTask4){
 			long[][] task4times = new long[8][3];
 			int k=0;
 			for(String i : Methods){
-				System.out.println("Method: " + i);
 				for(int j : D){
-					System.out.println("D: " + j);
 					task4times[j/2][k] = Tasks.task4(i, j);
 				}
 				k+=1;

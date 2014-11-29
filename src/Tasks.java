@@ -41,13 +41,13 @@ public class Tasks {
 			}
 		});
 		reader.buffer.close();
-		System.out.println("Task 1 terminated.");
+		System.out.println("Task 1 terminated." + "\n" + "--------------------");
 		return sortByNumberOfTweets;
 	}
 
 	//=====BRUTE FORCE =====//
 	public static long bruteforce() throws IOException{
-		System.out.println("Brute Force initiated:");
+		System.out.println("Brute Force initiated.");
 		DataBuff Buff = new DataBuff(Main.DataFile);
 		
 		ArrayList<String> Querry = new ArrayList<String>();
@@ -62,7 +62,7 @@ public class Tasks {
 			stringLine = Buff.buffer.readLine();
 			Querry.add(stringLine);
 		}
-		System.out.println("Querry in memory.");
+		System.out.println("Querry saved in memory. Starting to read.");
 		
 		long startTime = System.currentTimeMillis();
 		for(int line = Main.QuerrySize; line<Main.DataSetSize;line++){
@@ -85,14 +85,14 @@ public class Tasks {
 		System.out.println("Angle: " + angle + "\n" + "Querry at line " + indexque + ": " + que + "\n" + "Tweet at line " + indextwt + ": " + twt);
 		long endTime   = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
-		System.out.println("Brute Force terminated.");
+		System.out.println("Brute Force terminated." + "\n" + "--------------------");
 		Buff.buffer.close();
 		return totalTime;
 	}
 	
 	//=====TASK 2 =====//
 	public static long task2(String method,int d) throws Exception{
-		System.out.println("Task 2 initiated with Method " + method + " and d=" + d);
+		System.out.println("Task 2 initiated using Method " + method + " and d=" + d);
 		String path_file = Main.FilesPath +"dataReduction" + "_Method:" + method +  "_D:"+ d;
 		
 		DataBuff Buff = new DataBuff(path_file);
@@ -123,12 +123,14 @@ public class Tasks {
 		long totalTime = endTime - startTime;
 		System.out.println("Tweet: " + tweetMin + "\n" + "Querry: " + querryMin);
 		System.out.println("Minimum Angle:" + angle +"   Time elapsed: " + totalTime + "ms");
+		System.out.println("--------------------");
 		Buff.buffer.close();
 		return totalTime;
 	}
 
 	//=====TASK 3 =====//
 	public static long task3(String method,int d) throws Exception{
+		System.out.println("Task 3 initiated using Method " + method + " and d=" + d);
 		String path_file = Main.FilesPath +"dataReduction" + "_Method:" + method +  "_D:"+ d;
 		
 		DataBuff Buff = new DataBuff(path_file);
@@ -157,13 +159,16 @@ public class Tasks {
 		}
 		long endTime   = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
+		System.out.println("Tweet: " + tweetMin + "\n" + "Querry: " + querryMin);
 		System.out.println("Minimum Angle:" + angle +"   Time elapsed: " + totalTime + "ms");
+		System.out.println("--------------------");
 		Buff.buffer.close();
 		return totalTime;
 	}
 
 	//=====TASK 4 =====//
 	public static long task4(String method,int d) throws Exception{
+		System.out.println("Task 4 initiated using Method " + method + " and d=" + d);
 		String path_file = Main.FilesPath +"dataReduction" + "_Method:" + method +  "_D:"+ d;
 		
 		DataBuff Buff = new DataBuff(path_file);
@@ -192,7 +197,9 @@ public class Tasks {
 		}
 		long endTime   = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
+		System.out.println("Tweet: " + tweetMin + "\n" + "Querry: " + querryMin);
 		System.out.println("Minimum Angle:" + angle +"   Time elapsed: " + totalTime + "ms");
+		System.out.println("--------------------");
 		Buff.buffer.close();
 		return totalTime;
 	}
