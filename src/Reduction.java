@@ -51,7 +51,6 @@ public class Reduction {
 
 	// ===== Create Reduced Files =====//
 	public static void dataReduction(String method, int d, ArrayList<Term> sort) throws IOException{
-		//final BufferedReader reader = new BufferedReader(new FileReader(Main.DataFile));
 		DataBuff reader = new DataBuff(Main.DataFile);
 		String stringLine;
 		ArrayList<String>  subspace = subspace(method, d, sort);
@@ -67,7 +66,7 @@ public class Reduction {
 					listOfTermsSTRING += " " + terms[i];
 				}
 				else{
-					listOfTermsSTRING += " ";
+					//listOfTermsSTRING += " ";
 				}
 			}
 			outputWriter.write(line + " " + terms.length + " " + listOfTermsSTRING);
