@@ -1,3 +1,5 @@
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 
 
@@ -22,6 +24,7 @@ public class Main {
 	// ===== Main ===== //
 	public static void main(String[] args) throws Exception{
 		Tools.createFolder(FilesPath);
+		System.setOut(new PrintStream(new FileOutputStream(FilesPath + "Console.txt")));
 		
 		//-----Task1-----//
 		ArrayList<Term> sortByNumberOfTweets = Tasks.task1(); //List of Sorted Tweets by Number
