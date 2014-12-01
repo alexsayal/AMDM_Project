@@ -45,6 +45,7 @@ public class DataBuff {
 			String[] terms = stringLine.split("\\s+");
 			int index = Integer.parseInt(terms[0]);
 			int numberOfTerms = Integer.parseInt(terms[1]);
+			
 			if(Math.acos((terms.length-2)/numberOfTerms)<=angle){
 				for(int i=2;i<terms.length;i++){
 					listOfTerms.add(terms[i]);

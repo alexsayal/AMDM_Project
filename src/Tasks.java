@@ -167,8 +167,8 @@ public class Tasks {
 	}
 
 	//=====TASK 4 =====//
-	public static long task4(String method,int d) throws Exception{
-		System.out.println("Task 4 initiated using Method " + method + " and d=" + d);
+	public static long task4(String method,int d, double aprox) throws Exception{
+		System.out.println("Task 4 initiated using Method " + method + " and d=" + d + " and error of " + aprox*100 + "%");
 		String path_file = Main.FilesPath +"dataReduction" + "_Method:" + method +  "_D:"+ d;
 		
 		DataBuff Buff = new DataBuff(path_file);
@@ -176,14 +176,14 @@ public class Tasks {
 		ArrayList<Tweet> Querry = new ArrayList<Tweet>();
 		Tweet querryMin = new Tweet();
 		Tweet tweetMin = new Tweet();
-		double angle = Math.PI/2;
+		double angle = Math.PI/2+aprox*Math.PI/2;
 		
 		for(int line=0;line<Main.QuerrySize;line++){
 			Querry.add(Buff.getNextTweet(method));
 		}
 		long startTime = System.currentTimeMillis();
 		
-		Tweet tweet = Buff.getOptimisticTweet(angle);
+		Tweet tweet = Buff.getOptimisticTweet(angle-aprox*Math.PI/2);
 		while(tweet != null){
 			for(Tweet querry : Querry){
 				double aux = Tools.angleAlphabet(querry, tweet);
@@ -193,7 +193,7 @@ public class Tasks {
 					tweetMin = tweet;
 				}
 			}
-			tweet = Buff.getOptimisticTweet(angle);
+			tweet = Buff.getOptimisticTweet(angle-aprox*Math.PI/2);
 		}
 		long endTime   = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
