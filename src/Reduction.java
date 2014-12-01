@@ -56,7 +56,7 @@ public class Reduction {
 		ArrayList<String>  subspace = subspace(method, d, sort);
 		BufferedWriter outputWriter = getBufferWriter(method, d);
 		
-		for(int line = 0;  line<Main.DataSetSize && (stringLine = reader.buffer.readLine()) != null; line++){
+		for(int line = 0; line<Main.DataSetSize && (stringLine = reader.buffer.readLine()) != null; line++){
 			String[]  terms = stringLine.split("\\s+");
 			
 			String listOfTermsSTRING = new String();

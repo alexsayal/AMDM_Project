@@ -12,7 +12,7 @@ public class DataBuff {
 		buffer = new LineNumberReader(new FileReader(path));
 	}
 	
-	public Tweet getNextTweet(String method) throws IOException{
+	public Tweet getNextTweet() throws IOException{
 		ArrayList<String> listOfTerms = new ArrayList<String>();
 		int index = 0;
 		int numberOfTerms = 0;
