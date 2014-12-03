@@ -51,6 +51,7 @@ public class Reduction {
 
 	// ===== Create Reduced Files =====//
 	public static void dataReduction(String method, int d, ArrayList<Term> sort) throws IOException{
+		System.out.println("Data Reduction initiated using Method " + method + " and d=" + d);
 		DataBuff reader = new DataBuff(Main.DataFile);
 		String stringLine;
 		ArrayList<String>  subspace = subspace(method, d, sort);

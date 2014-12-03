@@ -87,7 +87,7 @@ public class Tasks {
 		long endTime   = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
 		System.out.println("Angle: " + angle + "\n" + "Querry at line " + indexque + ": " + que + "\n" + "Tweet at line " + indextwt + ": " + twt);
-		System.out.println("Brute Force terminated." + "\n" + "--------------------");
+		System.out.println("Brute Force terminated.");
 		Buff.buffer.close();
 		return totalTime;
 	}

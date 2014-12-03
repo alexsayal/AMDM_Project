@@ -15,8 +15,9 @@ public class Main {
 	public static double[][] task4angles = new double[8][3];
 	
 	// ===== To Run or Not to Run ===== //
+	public static final boolean rerunTask1 = false;
 	public static final boolean runBruteForce = false;
-	public static final boolean runDataReduction = false;
+	public static final boolean runDataReduction = true;
 	public static final boolean runTask2 = false;
 	public static final boolean runTask3 = false;
 	public static final boolean runTask4 = false;
@@ -24,11 +25,14 @@ public class Main {
 	// ===== Main ===== //
 	public static void main(String[] args) throws Exception{
 		Tools.createFolder(FilesPath);
+		ArrayList<Term> sortByNumberOfTweets = Tools.readerAL(sortedArrayFileName);
 		
 		//-----Task1-----//
-		ArrayList<Term> sortByNumberOfTweets = Tasks.task1(); //List of Sorted Tweets by Number
-		Term.writerArrayTerms(sortedArrayFileName, sortByNumberOfTweets);
-
+		if(sortByNumberOfTweets.isEmpty() || rerunTask1){
+			sortByNumberOfTweets = Tasks.task1(); //List of Sorted Tweets by Number
+			Term.writerArrayTerms(sortedArrayFileName, sortByNumberOfTweets);
+		}
+		
 		//-----Brute Force Algorithm-----//
 		if(runBruteForce){
 			long[][] time = new long[1][1];
@@ -41,15 +45,13 @@ public class Main {
 		if(runDataReduction){
 			long startTime = System.currentTimeMillis();
 			for(String i : Methods){
-				System.out.println("Method: " + i);
 				for(int j : D){
-					System.out.println("D: " + j);
 					Reduction.dataReduction(i, j, sortByNumberOfTweets);
 				}
 			}
 			long endTime   = System.currentTimeMillis();
 			long totalTime = endTime - startTime;
-			System.out.println("Total time for reduction: " + totalTime + "ms");
+			System.out.println("Data Reduction completed. Total time for reduction: " + totalTime + "ms");
 		}
 		
 		//-----Task2-----//

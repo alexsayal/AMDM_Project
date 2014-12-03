@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.ArrayList;
+import java.io.FileNotFoundException;
 
 
 public class Tools {
@@ -114,5 +116,30 @@ public class Tools {
 			}
 		}
 		return Math.acos(cont/(Math.sqrt(x.length)*Math.sqrt(y.length)));
+	}
+
+	// ===== Sorted List Reader ===== //
+	public static ArrayList<Term> readerAL (String filename) throws FileNotFoundException{
+		try{
+			if(Main.rerunTask1) throw new FileNotFoundException();
+			FileReader file = new FileReader(filename);
+			System.out.println("Reading sorted.csv file...");
+			LineNumberReader input = new LineNumberReader(file);
+			ArrayList<Term> list = new ArrayList<Term>();
+
+			String stringLine = input.readLine();
+
+			while(stringLine!=null){
+				String[] terms = stringLine.split(",");
+				list.add(new Term(terms[0],Integer.parseInt(terms[1])));
+				stringLine = input.readLine();
+			}
+
+			input.close();
+			return list;
+		}
+		catch (Exception FileNotFoundException){
+			return new ArrayList<Term>();
+		}
 	}
 }
