@@ -37,9 +37,6 @@ public class Reduction {
 				reduced.add(SortedTerms.get(randIntList.get(i)));
 			}
 		}
-		else if(method.equals("bruteforce")){
-			reduced = SortedTerms;
-		}
 		else throw new RuntimeException();
 		return reduced;
 	}

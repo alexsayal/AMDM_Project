@@ -27,7 +27,7 @@ How and what to run :
 
  -> The only file needed for running is Main.java. In the first lines, a section called "To Run or Not to Run" configures which Tasks should be executed by setting booleans.
  -> By default, all booleans will be set to false. If you want to run Task 2,3,4, Brute force or Data Reduction, just change the value of the respective boolean to true.
- -> Task 1 will run only if the sorted.csv file does not exist. If it does, the program will read it and move on. If the file exists but you want to replace it for a new one, set rerunTask1 as true.
+ -> Task 1 will run if the sorted.csv file does not exist. If it does, the program will read it and move on. If the file exists but you want to replace it for a new one, set rerunTask1 as true.
  -> All files exported by the scripts will end up in folder tmp/. It is possible to change this by altering "FilesPath" in the begining of Main file.
 
 

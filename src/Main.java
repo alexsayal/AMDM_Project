@@ -17,7 +17,7 @@ public class Main {
 	// ===== To Run or Not to Run ===== //
 	public static final boolean rerunTask1 = false;
 	public static final boolean runBruteForce = false;
-	public static final boolean runDataReduction = true;
+	public static final boolean runDataReduction = false;
 	public static final boolean runTask2 = false;
 	public static final boolean runTask3 = false;
 	public static final boolean runTask4 = false;
