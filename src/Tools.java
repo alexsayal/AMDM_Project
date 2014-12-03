@@ -25,8 +25,10 @@ public class Tools {
 		final LineNumberReader reader = new LineNumberReader(dataFile);
 		
 		HashMap<String, Term> map = new HashMap<String, Term>();
-		for(int i = 0;i<Main.QuerrySize;i++){
-			String[] terms = reader.readLine().split("\\s+");
+		String stringLine;
+
+		while((stringLine = reader.readLine()) != null){
+			String[] terms = stringLine.split("\\s+");
 			for(int j=0;j<terms.length;j++){
 				map.put(terms[j], new Term(terms[j],0));
 			}

@@ -17,7 +17,7 @@ public class Tasks {
 
 		String stringLine = reader.buffer.readLine();
 		String[] terms = stringLine.split("\\s+");
-		for(int line = 0; (stringLine = reader.buffer.readLine()) != null && line<Main.QuerrySize; line++){
+		for(int line = 0; (stringLine = reader.buffer.readLine()) != null && line<Main.DataSetSize; line++){
 			for(int j=0;j<terms.length;j++){
 				Term obj = (Term) map.get(terms[j]);
 				if(obj != null){

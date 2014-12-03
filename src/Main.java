@@ -15,11 +15,11 @@ public class Main {
 	public static double[][] task4angles = new double[8][3];
 	
 	// ===== To Run or Not to Run ===== //
-	public static final boolean runBruteForce = true;
-	public static final boolean runDataReduction = true;
-	public static final boolean runTask2 = true;
-	public static final boolean runTask3 = true;
-	public static final boolean runTask4 = true;
+	public static final boolean runBruteForce = false;
+	public static final boolean runDataReduction = false;
+	public static final boolean runTask2 = false;
+	public static final boolean runTask3 = false;
+	public static final boolean runTask4 = false;
 	
 	// ===== Main ===== //
 	public static void main(String[] args) throws Exception{
@@ -68,7 +68,6 @@ public class Main {
 		//-----Task3-----//
 		if(runTask3){
 			long[][] task3times = new long[8][3];
-			double[][] task3angles = new double[8][3];
 			int k=0;
 			for(String i : Methods){
 				for(int j : D){

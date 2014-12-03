@@ -69,8 +69,10 @@ public class Reduction {
 					//listOfTermsSTRING += " ";
 				}
 			}
-			outputWriter.write(line + " " + terms.length + " " + listOfTermsSTRING);
-			outputWriter.newLine();
+			if(listOfTermsSTRING.length()!=0){
+				outputWriter.write(line + " " + terms.length + " " + listOfTermsSTRING);
+				outputWriter.newLine();
+			}
 		}
 		outputWriter.flush();
 		outputWriter.close();
