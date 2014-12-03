@@ -60,7 +60,10 @@ public class Reduction {
 			String listOfTermsSTRING = new String();
 			
 			for(int i=0;i<terms.length;i++){
-				if(subspace.contains(terms[i])){
+				if(line<Main.QuerrySize){
+					listOfTermsSTRING += " " + terms[i];
+				}
+				else if(line>= Main.QuerrySize && subspace.contains(terms[i])){
 					listOfTermsSTRING += " " + terms[i];
 				}
 				else{
