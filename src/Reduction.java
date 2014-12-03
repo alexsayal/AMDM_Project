@@ -53,8 +53,10 @@ public class Reduction {
 		String stringLine;
 		ArrayList<String>  subspace = subspace(method, d, sort);
 		BufferedWriter outputWriter = getBufferWriter(method, d);
-		
-		for(int line = 0; line<Main.DataSetSize && (stringLine = reader.buffer.readLine()) != null; line++){
+		int line = 0;
+		stringLine = reader.buffer.readLine();
+
+		while(line<Main.DataSetSize && stringLine != null){
 			String[]  terms = stringLine.split("\\s+");
 			
 			String listOfTermsSTRING = new String();
@@ -70,14 +72,21 @@ public class Reduction {
 					//listOfTermsSTRING += " ";
 				}
 			}
-			if(listOfTermsSTRING.length()!=0){
+
+			stringLine = reader.buffer.readLine();
+
+			if(listOfTermsSTRING.length()!=0 && stringLine!=null){
 				outputWriter.write(line + " " + terms.length + " " + listOfTermsSTRING);
 				outputWriter.newLine();
 			}
+			else if(listOfTermsSTRING.length()!=0 && stringLine==null){
+				outputWriter.write(line + " " + terms.length + " " + listOfTermsSTRING);
+			}
+
+			line+=1;
 		}
 		outputWriter.flush();
 		outputWriter.close();
 		reader.buffer.close();
 	}
-
 }
