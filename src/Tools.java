@@ -78,7 +78,7 @@ public class Tools {
 				aux += times[i][j] + (j!=times[0].length-1 ? ", " : "");
 			}
 			outputWriter.write(aux);
-			outputWriter.newLine();
+			if(i!=times.length-1) outputWriter.newLine();
 		}
 		outputWriter.flush();  
 		outputWriter.close();  
@@ -93,7 +93,7 @@ public class Tools {
 				aux += angles[i][j] + (j!=angles[0].length-1 ? ", " : "");
 			}
 			outputWriter.write(aux);
-			outputWriter.newLine();
+			if(i!=angles.length-1) outputWriter.newLine();
 		}
 		outputWriter.flush();  
 		outputWriter.close();  

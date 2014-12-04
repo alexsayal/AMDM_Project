@@ -20,7 +20,7 @@ public class Term {
 		BufferedWriter outputWriter = new BufferedWriter(new FileWriter(filename));
 		for (int i = 0; i < x.size(); i++) {
 			outputWriter.write(x.get(i).toString());
-			outputWriter.newLine();
+			if(i!=x.size-1) outputWriter.newLine();
 		}
 		outputWriter.flush();  
 		outputWriter.close();  
