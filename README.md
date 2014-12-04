@@ -12,15 +12,15 @@ Brief explaination of files in src/:
 
  -> Tools.java : Contains a set of tools (methods) necessary for executing some of the tasks. The most important are the methods for calculating the angle between two tweets (angleAlphabet and angle_bruteforce) and the map creator (mapcreator).
 
- -> Tweet: Class which defines the object type Tweet.
+ -> Tweet.java : Class which defines the object type Tweet.
 
- -> Term : Class which defines the object type Term.
+ -> Term.java : Class which defines the object type Term.
 
- -> Tasks : Where the algorithms for Tasks 1, 2, 3, 4 and Brute force are located.
+ -> Tasks.java : Where the algorithms for Tasks 1, 2, 3, 4 and Brute force are located.
 
- -> Reduction : Where the algorithm for Data Reduction is located.
+ -> Reduction.java : Where the algorithm for Data Reduction is located.
 
- -> DataBuff : Couple of methods for reading data. getNextTweet and getOptimisticTweet advance through the dataset in a different way and this is one of the strategies for speedup of Task 3 and 4.
+ -> DataBuff.java : Couple of methods for reading data. getNextTweet and getOptimisticTweet advance through the dataset in a different way and this is one of the strategies for speedup of Task 3 and 4.
 
 
 How and what to run :

@@ -86,7 +86,7 @@ public class Tasks {
 		}
 		long endTime   = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
-		System.out.println("Angle: " + angle + "\n" + "Querry at line " + indexque + ": " + que + "\n" + "Tweet at line " + indextwt + ": " + twt);
+		System.out.println("Angle: " + angle + "\n" + "Querry at line " + (indexque+1) + ": " + que + "\n" + "Tweet at line " + (indextwt+1) + ": " + twt);
 		System.out.println("Brute Force terminated.");
 		Buff.buffer.close();
 		return totalTime;
@@ -149,6 +149,8 @@ public class Tasks {
 		}
 		
 		Tweet tweet = Buff.getOptimisticTweet(angle-aprox*Math.PI/2);
+		querryMin = Querry.get(0);
+		tweetMin = tweet;
 		
 		long startTime = System.currentTimeMillis();
 		while(tweet != null){
