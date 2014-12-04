@@ -19,7 +19,7 @@ public class Main {
 	public static final boolean runBruteForce = false;
 	public static final boolean runDataReduction = false;
 	public static final boolean runTask2 = false;
-	public static final boolean runTask3 = true;
+	public static final boolean runTask3 = false;
 	public static final boolean runTask4 = false;
 	
 	// ===== Main ===== //
